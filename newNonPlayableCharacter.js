@@ -33,19 +33,34 @@ function newNonPlayableCharacter(x, y) {
         })
     }
 
-    function walkNorth() {
+    function walkNorth(time) {
         direction = 'north'
         element.src = `./assets/red-character/north.gif`
+        return new Promise ((resolve) => {
+            setTimeout(() => {
+                resolve(stop())
+            }, time)
+        })
     }
 
-    function walkWest() {
+    function walkWest(time) {
         direction = 'west'
         element.src = `./assets/red-character/west.gif`
+        return new Promise ((resolve) => {
+            setTimeout(() => {
+                resolve(stop())
+            }, time)
+        })
     }
 
-    function walkSouth() {
+    function walkSouth(time) {
         direction = 'south'
         element.src = `./assets/red-character/south.gif`
+        return new Promise ((resolve) => {
+            setTimeout(() => {
+                resolve(stop())
+            }, time)
+        })
     }
 
     function stop() {
